@@ -1,0 +1,21 @@
+// ==UserScript==
+// @name         backgrounds back
+// @version      1.0
+// @description  puts pet backgrounds back on for your homepage
+// @author       fran
+// @match        http://www.neopets.com/index.phtml
+// @match        http://www.neopets.com/
+// @require http://code.jquery.com/jquery-3.4.1.min.js
+
+// ==/UserScript==
+
+$('.hp-carousel-pet').each(function () {
+  $(this).attr("style", `background-image: url("http:\/\/pets.neopets.com/cpn/${$(this).attr('data-name')}/1/7.png"); border-radius: 99em; width: 100%`);
+  $(this).attr("data-petheight", "300");
+
+});
+
+
+$('.hp-carousel-pet-offset').each(function () {
+  $(this).attr("style", "padding-bottom: 0px;");
+});
